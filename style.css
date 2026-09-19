@@ -240,7 +240,7 @@ button, input, textarea, select { font: inherit }
 
 .contacts-link {
     position: fixed;
-    bottom: env(safe-area-inset-bottom);
+    bottom: 0;
 
     display: flex;
 
@@ -252,8 +252,9 @@ button, input, textarea, select { font: inherit }
 
     text-decoration: none;
 
-    margin-inline-start: -0.5ch;
-    padding-inline: 0.5ch;
+    margin-inline-start: calc(-0.5ch + env(safe-area-inset-left));
+    padding-inline: calc(0.5ch + env(safe-area-inset-left));
+    padding-bottom: env(safe-area-inset-bottom);
 
     color: var(--text-inactive-color);
     background-color: var(--page-third-color);
