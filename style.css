@@ -145,7 +145,8 @@ button, input, textarea, select { font: inherit }
     flex-direction: column;
     justify-content: flex-start;
 
-    padding-inline: var(--grid-margin);
+    padding-inline: calc(var(--grid-margin) + env(safe-area-inset-left))
+                    calc(var(--grid-margin) + env(safe-area-inset-right));
     padding-top: var(--exclusive-margin);
 
     mix-blend-mode: difference;
@@ -174,9 +175,11 @@ button, input, textarea, select { font: inherit }
     display: flex;
     flex-direction: column;
 
+    width: 100vh;
     width: 100%;
 
-    padding-inline: var(--grid-margin);
+    padding-inline: calc(var(--grid-margin) + env(safe-area-inset-left))
+                    calc(var(--grid-margin) + env(safe-area-inset-right));
     padding-block: var(--exclusive-margin);
 
     background-color: var(--page-third-color);
@@ -237,7 +240,7 @@ button, input, textarea, select { font: inherit }
 
 .contacts-link {
     position: fixed;
-    bottom: 0;
+    bottom: env(safe-area-inset-bottom);
 
     display: flex;
 
