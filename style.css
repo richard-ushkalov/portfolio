@@ -10,12 +10,10 @@
 
     --page-third-color: rgb(216, 216, 216);
 
-    --text-color: rgb(60, 60, 60);
-
     --text-accent-color: var(--page-color);
     --text-third-color: var(--page-accent-color);
 
-    --text-inactive-color: rgb(172, 172, 172);
+    --text-inactive-color: rgb(175, 175, 175);
 
     /* font */
     --ratio: 1.4;
