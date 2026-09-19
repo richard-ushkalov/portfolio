@@ -334,7 +334,7 @@ button, input, textarea, select { font: inherit }
 .circle-gallery__title {
     z-index: -1;
 
-    width: 400%;
+    width: 200%;
 
     position: absolute;
     top: 0;
