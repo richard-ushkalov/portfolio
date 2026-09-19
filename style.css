@@ -1,4 +1,6 @@
 :root {
+    scroll-behavior: smooth;
+
     /* page */
     --grid-margin: clamp(1rem, -1.46rem + 10.52vw, 8rem);
     --exclusive-margin: calc(var(--grid-margin) / 4);
@@ -13,7 +15,7 @@
     --text-accent-color: var(--page-color);
     --text-third-color: var(--page-accent-color);
 
-    --text-inactive-color: rgb(175, 175, 175);
+    --text-inactive-color: rgb(150, 150, 150);
 
     /* font */
     --ratio: 1.4;
@@ -44,7 +46,7 @@
     --gallery-perspective: 1000px;
     --gallery-frame-perspective: 400px;
 
-    --gallery-collision-size: 90cqmin;
+    --gallery-collision-size: 70cqmin;
 
     --gallery-radius: calc(var(--gallery-collision-size) / 2);
 
@@ -95,7 +97,11 @@ button, input, textarea, select { font: inherit }
 
     color: var(--page-accent-inverted-color);
 }
-.text--basic { font-size: var(--h2-size); }
+.text--basic {
+    font-size: var(--h2-size);
+    color: black;
+}
+.text--small { font-size: var(--span-size); }
 .text--link {
     font-size: var(--h2-size);
 
@@ -154,7 +160,6 @@ button, input, textarea, select { font: inherit }
     justify-content: center;
     align-items: center;
 }
-.header__sub-title--sub, .header__sub-title--zone { font-size: var(--span-size); }
 @media (width > 34rem) {
     .header__title {
         flex-direction: row;
@@ -164,6 +169,8 @@ button, input, textarea, select { font: inherit }
 }
 
 .footer {
+    z-index: 10;
+
     display: flex;
     flex-direction: column;
 
@@ -212,6 +219,8 @@ button, input, textarea, select { font: inherit }
 }
 
 .main {
+    position: relative;
+
     flex: 1;
 
     width: 100%;
@@ -224,6 +233,44 @@ button, input, textarea, select { font: inherit }
     align-items: center;
 
     overflow-x: clip;
+}
+
+.contacts-link {
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+
+    padding-inline: var(--grid-margin);
+}
+.contacts-link__button {
+    opacity: 1;
+    visibility: visible;
+
+    text-decoration: none;
+
+    margin-inline-start: -0.5ch;
+    padding-inline: 0.5ch;
+
+    color: var(--text-inactive-color);
+    background-color: var(--page-third-color);
+
+    transition: opacity var(--anim-base-time) var(--bounce-out),
+                visibility 0s,
+                color var(--anim-base-time) var(--bounce-out);
+}
+@media (hover: hover) {
+    .contacts-link__button:hover {
+        color: var(--text-third-color);
+    }
+}
+.contacts-link__button:active { color: var(--page-third-color); }
+.contacts-link__button--hidden {
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity var(--anim-base-time) var(--bounce-out),
+                visibility 0s var(--anim-base-time);
 }
 
 .circle-gallery {
