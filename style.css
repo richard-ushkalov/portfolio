@@ -1,6 +1,6 @@
 :root {
     /* page */
-    --grid-margin: 8rem;
+    --grid-margin: clamp(1rem, -1.46rem + 10.52vw, 8rem);
     --exclusive-margin: calc(var(--grid-margin) / 4);
 
     --page-color: rgb(245, 245, 245);
@@ -18,17 +18,22 @@
     --text-inactive-color: rgb(172, 172, 172);
 
     /* font */
-    --h1-size: 2.74rem;
-    --h2-size: 1.96rem;
-    --h3-size: 1.4rem;
+    --ratio: 1.4;
+    --step-minus-2: calc(var(--step-minus-1) / var(--ratio));
+    --step-minus-1: calc(var(--step-0) / var(--ratio));
+    --step-0: 1rem;
+    --step-1: calc(var(--step-0) * var(--ratio));
+    --step-2: calc(var(--step-1) * var(--ratio));
+    --step-3: calc(var(--step-2) * var(--ratio));
 
-    --p-size: 1rem;
-    --a-size: 0.71rem;
-    --span-size: 0.51rem;
+    --h1-size: clamp(var(--step-2), 1.605rem + 1.513vw, var(--step-3));
+    --h2-size: clamp(var(--step-1), 1.145rem + 1.086vw, var(--step-2));
+
+    --p-size: var(--step-0);
+
+    --span-size: var(--step-minus-2);
 
     --base-weight: 300;
-
-    --base-margin: 0.5rem;
 
     /* header */
     --header-z-index: 100;
@@ -105,7 +110,7 @@ button, input, textarea, select { font: inherit }
     color: var(--text-accent-color);
 }
 .text--button-small {
-    font-size: var(--p-size);
+    font-size: var(--step-0);
     font-weight: var(--base-weight);
 
     color: var(--text-accent-color);
