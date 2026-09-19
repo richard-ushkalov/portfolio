@@ -36,9 +36,6 @@
     /* header */
     --header-z-index: 100;
 
-    /* footer */
-    --footer-height: calc(240px + var(--exclusive-margin) * 2);
-
     /* animation */
     --bounce-out: linear(0, 1.2 50%, 1);
     --anim-base-time: 400ms;
@@ -115,12 +112,19 @@ button, input, textarea, select { font: inherit }
 .text--upper { text-transform: uppercase; }
 
 .layout {
-    min-height: 100svh;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+
+.screen {
+    height: 100svh;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
 }
 
 .header {
@@ -164,7 +168,6 @@ button, input, textarea, select { font: inherit }
     flex-direction: column;
 
     width: 100%;
-    height: var(--footer-height);
 
     padding-inline: var(--grid-margin);
     padding-block: var(--exclusive-margin);
@@ -193,6 +196,8 @@ button, input, textarea, select { font: inherit }
     align-items: flex-end;
 
     gap: var(--exclusive-margin);
+
+    padding-top: var(--exclusive-margin);
 }
 .footer__contacts-link {
     color: var(--text-inactive-color);
@@ -207,11 +212,18 @@ button, input, textarea, select { font: inherit }
 }
 
 .main {
-    flex-grow: 1;
+    flex: 1;
+
+    width: 100%;
+    min-height: 0;
+
+    container-type: size;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    overflow-x: clip;
 }
 
 .circle-gallery {
