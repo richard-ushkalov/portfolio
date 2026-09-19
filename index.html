@@ -11,6 +11,7 @@
         <meta name="description" content="Richard Ushkalov — UI designer and frontend developer in Riga. Interface design and hand-written HTML, CSS and JavaScript. Selected work and contacts.">
 
         <link rel="stylesheet" href="style.css">
+        
         <script type="module" src="app.js"></script>
     </head>
     <body>
@@ -18,20 +19,20 @@
             <div class="screen">
                 <header class="header">
                     <h1 class="header__title text--title text--upper" aria-label="www.richard-ushkalov.com">
-                        <span class="header__sub-title header__sub-title--sub">www</span>
+                        <span class="header__sub-title header__sub-title--sub text--small">www</span>
                         <span class="header__sub-title header__sub-title--main">richard-ushkalov</span>
-                        <span class="header__sub-title header__sub-title--zone">com</span>
+                        <span class="header__sub-title header__sub-title--zone text--small">com</span>
                     </h1>
                 </header>
                 <main class="main">
                     <ul class="circle-gallery"></ul>
                 </main>
+                <div class="contacts-link">
+                    <a class="contacts-link__button text--basic text--upper" href="#contacts">Contact me</a>
+                </div>
             </div>
-            <footer class="footer">
-                <p class="footer__greetings text--basic text--upper">
-                    Contact me, <br />
-                    let's start building solutions
-                </p>
+            <footer class="footer" id="contacts">
+                <p class="footer__greetings text--basic text--upper">let's start building solutions</p>
                 <a class="footer__mail-to text--link text--upper" href="mailto:ricarduskalov@icloud.com">ricarduskalov@icloud.com</a>
                 <div class="footer__contacts">
                     <a class="footer__contacts-link footer__contacts-link--github text--link text--upper" href="https://github.com/richard-ushkalov">GitHub</a>
