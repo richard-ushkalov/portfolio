@@ -180,6 +180,7 @@ button, input, textarea, select { font: inherit }
 
     transition: color calc(var(--anim-base-time) * 2) var(--bounce-out);
 }
+.footer__mail-to:focus-within { color: var(--text-third-color); }
 @media (hover: hover) {
     .footer__mail-to:hover {
         color: var(--text-third-color);
@@ -199,6 +200,7 @@ button, input, textarea, select { font: inherit }
 
     transition: color calc(var(--anim-base-time) * 2) var(--bounce-out);
 }
+.footer__contacts-link:focus-within { color: var(--text-third-color); }
 @media (hover: hover) {
     .footer__contacts-link:hover {
         color: var(--text-third-color);
@@ -235,6 +237,26 @@ button, input, textarea, select { font: inherit }
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.circle-gallery__item:focus-within {
+    .circle-gallery__layout {
+        --gallery-item-width: min(5svw, 5svh);
+        --gallery-item-height: min(15svw, 15svh);
+
+        translate: 0% -30%;
+
+        padding: 1px;
+            
+        background-color: var(--page-accent-color);
+    }
+    .circle-gallery__title {
+        display: block;
+
+        animation: opacity-in calc(var(--anim-base-time) * 2);
+    }
+    .circle-gallery__img {
+        filter: none;
+    }
 }
 @media (hover: hover) {
     .circle-gallery__item:hover {
