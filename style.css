@@ -147,9 +147,18 @@ button, input, textarea, select { font: inherit }
     -webkit-user-select: none;
 
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .header__sub-title--sub, .header__sub-title--zone { font-size: var(--span-size); }
+@media (width > 34rem) {
+    .header__title {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+}
 
 .footer {
     display: flex;
