@@ -180,7 +180,7 @@ button, input, textarea, select { font: inherit }
 
     padding-inline: calc(var(--grid-margin) + env(safe-area-inset-left))
                     calc(var(--grid-margin) + env(safe-area-inset-right));
-    padding-block: var(--exclusive-margin);
+    padding-block: var(--exclusive-margin) calc(var(--exclusive-margin) + env(safe-area-inset-bottom));
 
     background-color: var(--page-third-color);
 }
@@ -244,7 +244,8 @@ button, input, textarea, select { font: inherit }
 
     display: flex;
 
-    padding-inline: var(--grid-margin);
+    padding-inline: calc(var(--grid-margin) + env(safe-area-inset-left))
+                    calc(var(--grid-margin) + env(safe-area-inset-right));
 }
 .contacts-link__button {
     opacity: 1;
@@ -252,8 +253,8 @@ button, input, textarea, select { font: inherit }
 
     text-decoration: none;
 
-    margin-inline-start: calc(-0.5ch + env(safe-area-inset-left));
-    padding-inline: calc(0.5ch + env(safe-area-inset-left));
+    margin-inline-start: -0.5ch;
+    padding-inline: 0.5ch;
     padding-bottom: env(safe-area-inset-bottom);
 
     color: var(--text-inactive-color);
