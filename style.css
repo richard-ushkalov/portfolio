@@ -44,17 +44,16 @@
     --anim-base-time: 400ms;
 
     /* gallery */
-    --gallery-collision-size: min(70svw, 70svh);
-
     --gallery-perspective: 1000px;
     --gallery-frame-perspective: 400px;
 
-    --gallery-radius: min(30svw, 30svh);
+    --gallery-collision-size: 90cqmin;
 
-    --gallery-item-collision-size: min(10svw, 10svh);
+    --gallery-radius: calc(var(--gallery-collision-size) / 2);
 
-    --gallery-item-width: min(10svw, 10svh);
-    --gallery-item-height: min(10svw, 10svh);
+    --gallery-item-width: calc(var(--gallery-collision-size) / 3);
+    --gallery-item-height: calc(var(--gallery-collision-size) / 3);
+    --gallery-item-collision-size: calc(var(--gallery-collision-size) / 3);
 }
 
 @keyframes fade-in {
@@ -242,8 +241,8 @@ button, input, textarea, select { font: inherit }
 }
 .circle-gallery__item:focus-within {
     .circle-gallery__layout {
-        --gallery-item-width: min(5svw, 5svh);
-        --gallery-item-height: min(15svw, 15svh);
+        --gallery-item-width: calc(var(--gallery-collision-size) / 3 / 2);
+        --gallery-item-height: calc(var(--gallery-collision-size) / 3 * 1.5);
 
         translate: 0% -30%;
 
@@ -263,8 +262,8 @@ button, input, textarea, select { font: inherit }
 @media (hover: hover) {
     .circle-gallery__item:hover {
         .circle-gallery__layout {
-            --gallery-item-width: min(5svw, 5svh);
-            --gallery-item-height: min(15svw, 15svh);
+            --gallery-item-width: calc(var(--gallery-collision-size) / 3 / 2);
+            --gallery-item-height: calc(var(--gallery-collision-size) / 3 * 1.5);
 
             translate: 0% -30%;
 
